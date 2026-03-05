@@ -4,6 +4,8 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 
+@file:Suppress("unused")
+
 package io.github.proify.extensions.android
 
 import android.annotation.SuppressLint
@@ -13,7 +15,6 @@ import de.robv.android.xposed.XposedHelpers
 import java.lang.reflect.Field
 import java.util.concurrent.CopyOnWriteArraySet
 
-@Suppress("unused")
 object Flyme {
     const val FLAG_ALWAYS_SHOW_TICKER_HOOK = 0x01000000
     const val FLAG_ONLY_UPDATE_TICKER_HOOK = 0x02000000
