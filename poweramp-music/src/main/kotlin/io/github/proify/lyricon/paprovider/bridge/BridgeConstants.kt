@@ -7,7 +7,7 @@
 package io.github.proify.lyricon.paprovider.bridge
 
 object BridgeConstants {
+
     const val ACTION_SETTING_CHANGED: String =
         "io.github.proify.lyricon.paprovider.bridge.ACTION_SETTING_CHANGED"
-
 }

@@ -15,6 +15,12 @@ object QrcDecrypter {
         DESHelper.tripleDESKeySetup(QQ_KEY, it, DESHelper.DECRYPT)
     }
 
+    /**
+     * 解密 QRC 歌词数据。
+     *
+     * @param encrypted 待解密的 QRC 歌词数据，16 进制字符串
+     * @return 解密后的歌词数据。如果不是十六进制字符串，则返回原字符串
+     */
     fun decrypt(encrypted: String?): String? {
         if (encrypted.isNullOrBlank()) return null
         if (!isHexString(encrypted)) return encrypted
@@ -52,5 +58,17 @@ object QrcDecrypter {
                 this[i] = hex.substring(i * 2, i * 2 + 2).toInt(16).toByte()
             }
         }
+    }
+
+    private fun isHexString(input: String): Boolean {
+        if (input.isEmpty() || input.length % 2 != 0) return false
+
+        for (char in input) {
+            val isValidHex = (char in '0'..'9') ||
+                    (char in 'a'..'f') ||
+                    (char in 'A'..'F')
+            if (!isValidHex) return false
+        }
+        return true
     }
 }

@@ -8,9 +8,6 @@ package io.github.proify.lyricon.saltprovider.xposed
 
 import io.github.proify.lyricon.provider.ProviderLogo
 
-/**
- * 交给[MeizuProvider]实现
- */
 object SaltPlayer : MeizuProvider(
     Constants.SALT_PLAYER_PACKAGE_NAME,
     logo = ProviderLogo.fromBase64(Constants.ICON)
